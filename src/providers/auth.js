@@ -5,7 +5,9 @@ export const AuthContext = React.createContext({});
 export const AuthProvider = (props) =>{
 
     const [apiForm , setApiForm] = React.useState({})
-    
+
+    const REACT_APP_API_URL = "https://api-natureba.onrender.com"
+
     // const [user, setUser] =React.useState({
     //     username:'',
     //     token:''
@@ -28,7 +30,7 @@ useEffect(()=>{
 },[])
 
 return(
-    <AuthContext.Provider value = {{apiForm,setApiForm,cart,setCart}}>
+    <AuthContext.Provider value = {{apiForm,setApiForm,cart,setCart, REACT_APP_API_URL}}>
         {props.children}
     </AuthContext.Provider>
 )

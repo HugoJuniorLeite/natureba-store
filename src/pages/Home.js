@@ -8,7 +8,7 @@ import { useAuth } from "../providers/auth.js"
 
 export default function Home() {
 
-    const {apiForm,setCart, cart}= useAuth()
+    const {apiForm,setCart, cart, REACT_APP_API_URL}= useAuth()
 
 
    // const [count, setCount] = useState(0)
@@ -32,7 +32,7 @@ export default function Home() {
 
     useEffect(() => {
 
-        axios.get(`REACT_APP_API_URL/products`)
+        axios.get(`${REACT_APP_API_URL}/products`)
             .then((res) => {
 
                 console.log(res.data)

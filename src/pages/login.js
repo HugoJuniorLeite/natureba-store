@@ -10,7 +10,7 @@ import { useAuth } from "../providers/auth";
 
 export default function Login() {
 
-    const {setApiForm}= useAuth()
+    const {setApiForm, REACT_APP_API_URL}= useAuth()
     const navigate = useNavigate()
 
     const [form, setForm] = useState({
@@ -32,7 +32,7 @@ export default function Login() {
         
         try {
 
-            const tokenObj = await axios.post(`REACT_APP_API_URL/`, form)
+            const tokenObj = await axios.post(`${REACT_APP_API_URL}/`, form)
 
             localStorage.setItem('apiForm', JSON.stringify(tokenObj.data));
             
