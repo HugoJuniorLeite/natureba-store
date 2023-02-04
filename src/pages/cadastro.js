@@ -28,7 +28,7 @@ export default function Registration() {
 
         try {
             
-            const sendIt = await axios.post(`https://api-natureba.onrender.com/cadastro`, formUser)
+            const sendIt = await axios.post(`REACT_APP_API_URL/cadastro`, formUser)
 
             alert(sendIt.data)
 

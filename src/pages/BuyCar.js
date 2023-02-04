@@ -71,7 +71,7 @@ export default function BuyCar() {
 
         try {
 
-            const wasSendObj = await axios.post(`https://api-natureba.onrender.com/sales`, sendObj , config)
+            const wasSendObj = await axios.post(`REACT_APP_API_URL/sales`, sendObj , config)
             
             console.log(wasSendObj)
 

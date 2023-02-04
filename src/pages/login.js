@@ -32,7 +32,7 @@ export default function Login() {
         
         try {
 
-            const tokenObj = await axios.post(`https://api-natureba.onrender.com/`, form)
+            const tokenObj = await axios.post(`REACT_APP_API_URL/`, form)
 
             localStorage.setItem('apiForm', JSON.stringify(tokenObj.data));
             

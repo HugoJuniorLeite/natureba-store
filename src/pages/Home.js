@@ -32,7 +32,7 @@ export default function Home() {
 
     useEffect(() => {
 
-        axios.get(`https://api-natureba.onrender.com/products`)
+        axios.get(`REACT_APP_API_URL/products`)
             .then((res) => {
 
                 console.log(res.data)
