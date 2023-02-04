@@ -3,11 +3,14 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Conteiner, Form } from "../css/css";
 import axios from "axios";
+import { useAuth } from "../providers/auth";
 
 
 export default function Registration() {
 
     const navigate = useNavigate()
+
+    const {REACT_APP_API_URL}= useAuth()
 
     const [formUser, setFormUser] = useState({
         name: "",
@@ -28,7 +31,7 @@ export default function Registration() {
 
         try {
             
-            const sendIt = await axios.post(`REACT_APP_API_URL/cadastro`, formUser)
+            const sendIt = await axios.post(`${REACT_APP_API_URL}/cadastro`, formUser)
 
             alert(sendIt.data)
 

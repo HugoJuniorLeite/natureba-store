@@ -9,7 +9,7 @@ export default function BuyCar() {
 
 
     const navigate = useNavigate()
-    const { apiForm, cart ,setCart } = useAuth()
+    const { apiForm, cart ,setCart, REACT_APP_API_URL } = useAuth()
     const [formBuy, setFormBuy] = useState([
         {
             name: "",
@@ -71,7 +71,7 @@ export default function BuyCar() {
 
         try {
 
-            const wasSendObj = await axios.post(`REACT_APP_API_URL/sales`, sendObj , config)
+            const wasSendObj = await axios.post(`${REACT_APP_API_URL}/sales`, sendObj , config)
             
             console.log(wasSendObj)
 
